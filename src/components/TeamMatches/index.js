@@ -1,11 +1,16 @@
 import {Component} from 'react'
 
+import Loader from 'react-loader-spinner'
+
+import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
+
 import './index.css'
 
 // const teamMatchesApiUrl = ''
 
 class TeamMatches extends Component {
-  state = {teamMatchesData: {}}
+  state = {teamMatchesData: {}, isLoading: true}
 
   componentDidMount() {
     this.getTeamMatchesData()
@@ -40,20 +45,32 @@ class TeamMatches extends Component {
       recentMatches: recentMatchesArray,
     }
     // console.log(updateData)
-    this.setState({teamMatchesData: updateData})
+    this.setState({teamMatchesData: updateData, isLoading: false})
+  }
+
+  renderTeamMatches = () => {
+    const {teamMatchesData, isLoading} = this.state
+    const {teamBannerUrl, latestMatchDetails, recentMatches} = teamMatchesData
+    return isLoading ? (
+      <div className="loader-spin" testid="loader">
+        <Loader type="Oval" color="#ffffff" height={50} width={50} />
+      </div>
+    ) : (
+      <div className="team-container">
+        <img src={teamBannerUrl} alt="team banner" className="team-banner" />
+        <p>Latest Matches</p>
+        <LatestMatch matchDetails={latestMatchDetails} />
+        <ul className="recent-matches-list">
+          {recentMatches.map(eachMatch => (
+            <MatchCard matchDetails={eachMatch} key={eachMatch.id} />
+          ))}
+        </ul>
+      </div>
+    )
   }
 
   render() {
-    const {teamMatchesData} = this.state
-    const {teamBannerUrl} = teamMatchesData
-    return (
-      <div>
-        <h1>RB</h1>
-        <img src={teamBannerUrl} alt="team banner" className="team-banner" />
-        {/* <LatestMatch />
-                <MatchCard /> */}
-      </div>
-    )
+    return <div className="bg-container">{this.renderTeamMatches()}</div>
   }
 }
 

@@ -1,1 +1,13 @@
-/* Write your CSS here */
+.match-result-container {
+  list-style-type: none;
+  background-color: #0f172a;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-right: 10px;
+  width: 250px;
+  text-align: center;
+}

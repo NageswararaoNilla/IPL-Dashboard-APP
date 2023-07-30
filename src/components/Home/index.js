@@ -1,5 +1,7 @@
 import {Component} from 'react'
 
+import Loader from 'react-loader-spinner'
+
 import TeamCard from '../TeamCard'
 
 import './index.css'
@@ -7,7 +9,7 @@ import './index.css'
 const teamsApiUrl = 'https://apis.ccbp.in/ipl'
 
 class Home extends Component {
-  state = {teamsData: []}
+  state = {teamsData: [], isLoading: true}
 
   componentDidMount() {
     this.getTeamsData()
@@ -22,13 +24,17 @@ class Home extends Component {
       teamImageUrl: eachTeam.team_image_url,
     }))
     // console.log(updateData)
-    this.setState({teamsData: updateData})
+    this.setState({teamsData: updateData, isLoading: false})
   }
 
   render() {
-    const {teamsData} = this.state
+    const {teamsData, isLoading} = this.state
     // console.log(teamsData)
-    return (
+    return isLoading ? (
+      <div testid="loader">
+        <Loader type="Oval" color="#ffffff" height={50} width={50} />{' '}
+      </div>
+    ) : (
       <div className="home-container">
         <div className="logo-container">
           <img

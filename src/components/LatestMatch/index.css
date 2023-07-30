@@ -1,1 +1,36 @@
-/* Write your CSS here */
+.match-container {
+  background-color: #0f172a;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+@media screen and (min-width: 768px) {
+  .match-container {
+    flex-direction: row;
+  }
+}
+
+.match-date {
+  display: flex;
+  align-items: center;
+}
+
+.competing-team-logo {
+  width: 100px;
+  height: 150px;
+  margin-left: 40px;
+}
+
+.line {
+  border: 1px solid #475569;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .line {
+    border: none;
+  }
+}
