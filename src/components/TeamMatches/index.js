@@ -52,13 +52,13 @@ class TeamMatches extends Component {
     const {teamMatchesData, isLoading} = this.state
     const {teamBannerUrl, latestMatchDetails, recentMatches} = teamMatchesData
     return isLoading ? (
-      <div className="loader-spin" testid="loader">
+      <div className="loader-spin">
         <Loader type="Oval" color="#ffffff" height={50} width={50} />
       </div>
     ) : (
       <div className="team-container">
         <img src={teamBannerUrl} alt="team banner" className="team-banner" />
-        <p>Latest Matches</p>
+        <p className="latest-heading">Latest Matches</p>
         <LatestMatch matchDetails={latestMatchDetails} />
         <ul className="recent-matches-list">
           {recentMatches.map(eachMatch => (
@@ -69,8 +69,21 @@ class TeamMatches extends Component {
     )
   }
 
+  getBgColor = () => {
+    const {match} = this.props
+    const {params} = match
+    const {id} = params
+    return id.toLowerCase()
+  }
+
   render() {
-    return <div className="bg-container">{this.renderTeamMatches()}</div>
+    const bgColor = this.getBgColor()
+    console.log(bgColor)
+    return (
+      <div className={`bg-container ${bgColor}`}>
+        {this.renderTeamMatches()}
+      </div>
+    )
   }
 }
 

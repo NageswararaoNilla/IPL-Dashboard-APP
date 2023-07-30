@@ -17,12 +17,27 @@
 }
 
 .team-card-img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-right: 15px;
 }
 
+@media screen and (min-width: 768px) {
+  .team-card-img {
+    width: 130px;
+    height: 140px;
+    margin-right: 25px;
+  }
+}
+
 .team-card-heading {
-  font-size: 32px;
+  font-size: 18px;
   font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .team-card-heading {
+    font-size: 32px;
+    font-weight: 500;
+  }
 }

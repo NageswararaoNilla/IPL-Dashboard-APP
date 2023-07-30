@@ -1,13 +1,77 @@
 .match-result-container {
   list-style-type: none;
   background-color: #0f172a;
-  padding: 10px;
-  border-radius: 12px;
+  padding: 8px 25px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   margin-bottom: 25px;
-  margin-right: 10px;
-  width: 250px;
+  margin-right: 18px;
+  width: 45%;
+  max-width: 200px;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .match-result-container {
+    width: 30%;
+    min-width: 320px;
+    max-width: 340px;
+    padding: 12px 45px;
+  }
+}
+
+.status {
+  font-size: 14px;
+}
+
+.red {
+  color: #e31a1a;
+}
+
+.green {
+  color: #18ed66;
+}
+
+@media screen and (min-width: 768px) {
+  .status {
+    font-size: 26px;
+  }
+}
+
+.card-competing-team-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.card-heading {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .card-competing-team-logo {
+    width: 160px;
+    height: 160px;
+  }
+  .card-heading {
+    font-size: 28px;
+  }
+  .card-result {
+    font-size: 18px;
+  }
+}
+
+.card-result {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .card-result {
+    font-size: 16px;
+  }
 }

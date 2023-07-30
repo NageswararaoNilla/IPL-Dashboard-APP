@@ -1,27 +1,68 @@
 .match-container {
   background-color: #0f172a;
-  padding: 15px;
-  border-radius: 8px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .match-container {
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 
 .match-date {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin: 5px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .match-date {
+    width: 90%;
+  }
+}
+
+.match-left-details {
+  width: 60%;
+}
+
+.competing-team-text {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) {
+  .competing-team-text {
+    font-size: 40px;
+  }
+}
+
+.competing-date {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .competing-date {
+    font-size: 26px;
+  }
 }
 
 .competing-team-logo {
-  width: 100px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   margin-left: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .competing-team-logo {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 .line {
@@ -31,6 +72,36 @@
 
 @media screen and (min-width: 768px) {
   .line {
-    border: none;
+    display: none;
+  }
+}
+
+.match-right-details {
+  margin: 5px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .match-right-details {
+    text-align: right;
+    width: 40%;
+    margin: 20px 2px;
+    margin-right: 20px;
+  }
+}
+
+.sub-head {
+  font-size: 18px;
+}
+
+.sub-answer {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .sub-head {
+    font-size: 20px;
+  }
+  .sub-answer {
+    font-size: 16px;
   }
 }

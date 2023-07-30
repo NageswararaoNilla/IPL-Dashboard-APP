@@ -17,9 +17,9 @@ const LatestMatch = props => {
   return (
     <div className="match-container">
       <div className="match-date">
-        <div>
-          <p>{competingTeam}</p>
-          <p>{date}</p>
+        <div className="match-left-details">
+          <p className="competing-team-text">{competingTeam}</p>
+          <p className="competing-date">{date}</p>
           <p>{venue}</p>
           <p>{result}</p>
         </div>
@@ -30,15 +30,15 @@ const LatestMatch = props => {
         />
       </div>
       <hr className="line" />
-      <div>
-        <p>First Innings</p>
-        <p>{firstInnings}</p>
-        <p>Second Innings</p>
-        <p>{secondInnings}</p>
-        <p>Man Of The Match</p>
-        <p>{manOfTheMatch}</p>
-        <p>Umpires</p>
-        <p>{umpires}</p>
+      <div className="match-right-details">
+        <p className="sub-head">First Innings</p>
+        <p className="sub-answer">{firstInnings}</p>
+        <p className="sub-head">Second Innings</p>
+        <p className="sub-answer">{secondInnings}</p>
+        <p className="sub-head">Man Of The Match</p>
+        <p className="sub-answer">{manOfTheMatch}</p>
+        <p className="sub-head">Umpires</p>
+        <p className="sub-answer">{umpires}</p>
       </div>
     </div>
   )
